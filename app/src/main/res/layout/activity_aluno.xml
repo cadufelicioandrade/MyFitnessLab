@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlunoActivity">
+
+    <LinearLayout
+        android:id="@+id/form_aluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="@string/tittle_aluno"/>
+
+        <EditText
+            android:id="@+id/edit_nome_aluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edit_aluno"/>
+
+        <Button
+            android:id="@+id/btn_salvar_aluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/btnForm"
+            android:layout_marginTop="50dp"
+            android:text="@string/btn_cad_aluno" />
+
+    </LinearLayout>
+
+</ScrollView>
