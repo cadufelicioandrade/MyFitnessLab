@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.plano_semanal.view.CadastroPlanoSemanalFragment">
+
+    <!-- =========== BLOCO 1: CABEÇALHO FIXO =========== -->
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_teal"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/header_plano_semanal"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_salvar_plano"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Salvar"
+        app:icon="@drawable/outline_save_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_title" />
+
+    <!-- TextInputLayout MODIFICADO para dar espaço ao botão -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_nome_plano_semanal"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Nome do Plano"
+        app:layout_constraintBottom_toBottomOf="@id/btn_salvar_plano"
+        app:layout_constraintEnd_toStartOf="@id/btn_salvar_plano"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_salvar_plano">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_nome_plano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_dia_semana"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Dia da Semana"
+        app:layout_constraintEnd_toEndOf="@id/btn_salvar_plano"
+        app:layout_constraintStart_toStartOf="@id/layout_nome_plano_semanal"
+        app:layout_constraintTop_toBottomOf="@id/layout_nome_plano_semanal">
+
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete_dia_semana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            tools:text="Segunda-feira" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/divider_header"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@id/layout_dia_semana"
+        app:layout_constraintStart_toStartOf="@id/layout_dia_semana"
+        app:layout_constraintTop_toBottomOf="@id/layout_dia_semana" />
+
+
+    <!-- =========== BLOCO 2: LISTA DINÂMICA DE REFEIÇÕES (PARA O DIA SELECIONADO) =========== -->
+
+    <TextView
+        android:id="@+id/label_refeicoes_adicionadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Refeições Adicionadas"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/divider_header"
+        app:layout_constraintTop_toBottomOf="@id/divider_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_refeicoes_do_dia"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_refeicoes_adicionadas"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_refeicao_cadastro_plano_semanal" />
+
+
+    <!-- =========== BLOCO 3: FORMULÁRIO DE ADIÇÃO (FLUTUANTE) =========== -->
+
+    <include
+        android:id="@+id/cadastro_refeicao_include"
+        layout="@layout/include_cadastro_refeicao_plano_sem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

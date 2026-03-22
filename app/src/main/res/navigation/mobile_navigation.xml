@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nav_home"
+    android:id="@+id/mobile_navigation">
+
+    <fragment android:id="@+id/nav_home"
+        android:label="@string/inicio"
+        android:name="com.app.fitcorepro.feature.composicao_corporal.HomeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/nav_treino"
+        android:label="@string/treino"
+        android:name="com.app.fitcorepro.feature.treinamento.view.TreinoFragment"
+        tools:layout="@layout/fragment_treino"/>
+
+    <fragment
+        android:id="@+id/nav_diet"
+        android:label="@string/dieta"
+        android:name="com.app.fitcorepro.view.RefeicaoFragment"
+        tools:layout="@layout/fragment_refeicao">
+        <action
+            android:id="@+id/action_nav_diet_to_nav_diet_week"
+            app:destination="@id/nav_diet_week" />
+        <action
+            android:id="@+id/action_nav_diet_to_nav_diet_dia"
+            app:destination="@id/nav_diet_dia" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_diet_dia"
+        android:label="@string/dieta_do_dia"
+        android:name="com.app.fitcorepro.feature.dieta_dia.view.DietaDiaFragment"
+        tools:layout="@layout/fragment_dieta_dia">
+        <action
+            android:id="@+id/action_nav_diet_dia_to_nav_add_alimento_refeicao_dieta_dia"
+            app:destination="@id/nav_list_alimento_refeicao_dieta_dia">
+            <argument android:name="refeicaoId" app:argType="string" />
+            <argument android:name="refeicaoTitulo" app:argType="string" />
+            <argument android:name="dietaDiaId" app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_nav_diet_dia_to_nav_acoes_alimento_base_dieta_dia"
+            app:destination="@id/nav_acoes_alimento_base_dieta_dia" />
+        <action
+            android:id="@+id/action_nav_diet_dia_to_nav_gerenciar_refeicoes"
+            app:destination="@id/nav_gerenciar_refeicoes" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_gerenciar_refeicoes"
+        android:name="com.app.fitcorepro.feature.dieta_dia.view.GerenciarRefeicoesFragment"
+        android:label="@string/gerenciar_refeicoes"
+        tools:layout="@layout/fragment_gerenciar_refeicoes_dieta_dia">
+        <argument
+            android:name="refeicoes"
+            app:argType="com.app.fitcorepro.feature.dieta_dia.model.RefeicaoDietaDia[]"/>
+    </fragment>
+
+    <fragment android:id="@+id/nav_list_alimento_refeicao_dieta_dia"
+        android:label="@string/list_alimento_refeicao"
+        android:name="com.app.fitcorepro.feature.dieta_dia.view.ListaAlimentoBaseDietaDiaFragment"
+        tools:layout="@layout/fragment_lista_alimento_base_dieta_dia">
+        <argument
+            android:name="refeicaoId"
+            app:argType="string" />
+        <argument
+            android:name="refeicaoTitulo"
+            app:argType="string" />
+        <argument
+            android:name="dietaDiaId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_list_alimento_refeicao_dieta_dia_to_nav_adciona_alimento_base"
+            app:destination="@id/nav_acoes_alimento_base_dieta_dia" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_acoes_alimento_base_dieta_dia"
+        android:label="@string/add_alimento_base"
+        android:name="com.app.fitcorepro.feature.dieta_dia.view.AcoesAlimentoBaseDietaDiaFragment"
+        tools:layout="@layout/fragment_acoes_alimento_base_dieta_dia">
+        <!-- Argumentos que este fragmento espera receber -->
+        <argument
+            android:name="alimentoId"
+            app:argType="string" />
+        <argument
+            android:name="alimentoNome"
+            app:argType="string" />
+        <argument
+            android:name="alimentoCalorias"
+            app:argType="float" />
+        <argument
+            android:name="alimentoCarboidratos"
+            app:argType="float" />
+        <argument
+            android:name="alimentoProteinas"
+            app:argType="float" />
+        <argument
+            android:name="alimentoGorduras"
+            app:argType="float" />
+        <argument
+            android:name="alimentoFibras"
+            app:argType="float" />
+        <argument
+            android:name="quantidadeGramas"
+            app:argType="integer" />
+        <argument
+            android:name="refeicaoId"
+            app:argType="string" />
+        <argument
+            android:name="refeicaoTitulo"
+            app:argType="string" />
+        <argument
+            android:name="dietaDiaId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_diet_week"
+        android:label="@string/plano_semanal"
+        android:name="com.app.fitcorepro.feature.plano_semanal.view.PlanoSemanalFragment"
+        tools:layout="@layout/fragment_plano_semanal">
+        <action
+            android:id="@+id/action_nav_diet_week_to_nav_new_plan_week"
+            app:destination="@id/nav_new_plan_week" />
+        <action
+            android:id="@+id/action_nav_diet_week_to_nav_new_meal"
+            app:destination="@id/nav_new_meal" />
+        <action
+            android:id="@+id/action_nav_diet_week_to_nav_new_aliment"
+            app:destination="@id/nav_new_aliment" />
+        <action
+            android:id="@+id/action_nav_diet_week_to_nav_edit_aliment"
+            app:destination="@id/nav_edit_aliment" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_new_plan_week"
+        android:label="@string/cadastro_plano_semanal"
+        android:name="com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment"
+        tools:layout="@layout/fragment_cadastro_novo_plano_semanal">
+        <action
+            android:id="@+id/action_nav_new_plan_week_to_nav_diet_week"
+            app:destination="@id/nav_diet_week" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_new_meal"
+        android:label="@string/cadastro_refeicao"
+        android:name="com.app.fitcorepro.feature.plano_semanal.view.CadastroRefeicaoPlanoSemFragment"
+        tools:layout="@layout/fragment_cadastro_refeicao_plano_sem">>
+        <action
+            android:id="@+id/action_nav_new_meal_to_nav_diet_week"
+            app:destination="@id/nav_diet_week" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_new_aliment"
+        android:label="@string/cadastro_alimento"
+        android:name="com.app.fitcorepro.feature.plano_semanal.view.CadastroListaDeAlimentoPlanoSemFragment"
+        tools:layout="@layout/fragment_cadastro_lista_de_alimento_plano_sem">
+        <action
+            android:id="@+id/action_nav_new_aliment_to_nav_diet_week"
+            app:destination="@id/nav_diet_week" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_edit_aliment"
+        android:label= "@string/edti_alimento"
+        android:name="com.app.fitcorepro.feature.plano_semanal.view.EditaAlimentoPlanoSemFragment"
+        tools:layout="@layout/fragment_edita_alimento_plano">
+        <action
+            android:id="@+id/action_nav_edit_aliment_to_nav_diet_week"
+            app:destination="@id/nav_diet_week" />
+    </fragment>
+
+ />
+
+
+</navigation>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_teal"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Adicione seu Alimento"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title"
+        app:layout_constraintVertical_bias="0.3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Alimento da Refeição"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/title_novo_alimento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/layout_novo_grama_alimento"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Arroz integral" />
+
+                <!-- Campo para GRAMAS -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_novo_grama_alimento"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Gramas"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_novo_grama_alimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_acao_alimento_refeicao_ao_dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:text="Adicionar alimento ao Dia"
+                app:icon="@drawable/baseline_add_white_24" />
+
+            <!-- ======================= INÍCIO DA TABELA NUTRICIONAL ======================= -->
+
+            <!-- Divisor e Título para a Tabela -->
+            <!-- ======================= INÍCIO DA TABELA NUTRICIONAL (VERSÃO CORRIGIDA E UNIFICADA) ======================= -->
+
+            <!-- Divisor Visual -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/gray_200" />
+
+            <!-- Container ÚNICO para a Tabela Nutricional -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_tabela_nutricional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp">
+
+                <!-- Título da Tabela -->
+                <TextView
+                    android:id="@+id/title_table"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Tabela Nutricional (Valores por 100g)"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/btn_toggle_visibility_table"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_toggle_visibility_table"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_toggle_visibility_table" />
+
+                <!-- Botão de Expandir/Recolher -->
+                <ImageButton
+                    android:id="@+id/btn_toggle_visibility_table"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Expandir ou recolher tabela nutricional"
+                    android:src="@drawable/outline_expand_circle_down_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <!-- Agrupa por id todos itens macros para depois ocultar-->
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_tabela_conteudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:constraint_referenced_ids="label_kcal,valor_kcal,label_carb,valor_carb,label_prot,valor_prot,label_gord,valor_gord,label_fib,valor_fib"
+                    tools:visibility="visible" />
+
+                <!-- Coluna de Rótulos -->
+                <TextView
+                    android:id="@+id/label_kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Calorias"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_table"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/label_carb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Carboidratos"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_kcal"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/label_prot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Proteínas"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_carb"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/label_gord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Gorduras"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_prot"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/label_fib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Fibras"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_gord"
+                    tools:visibility="visible" />
+
+                <!-- Coluna de Valores -->
+                <TextView
+                    android:id="@+id/valor_kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    app:layout_constraintBaseline_toBaselineOf="@id/label_kcal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="155 kcal"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/valor_carb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    app:layout_constraintBaseline_toBaselineOf="@id/label_carb"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="1.1 g"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/valor_prot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    app:layout_constraintBaseline_toBaselineOf="@id/label_prot"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="13.0 g"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/valor_gord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    app:layout_constraintBaseline_toBaselineOf="@id/label_gord"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="11.0 g"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/valor_fib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewEnd"
+                    app:layout_constraintBaseline_toBaselineOf="@id/label_fib"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="0.0 g"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- ======================== FIM DA TABELA NUTRICIONAL ======================= -->
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

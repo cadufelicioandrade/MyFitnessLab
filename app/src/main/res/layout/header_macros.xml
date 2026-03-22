@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:weightSum="5"
+    android:padding="7dp">
+
+    <TextView
+        android:id="@+id/carboidrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="italic|bold"
+        android:textSize="12sp"
+        android:textColor="@color/gray_700"
+        tools:text="Carb: 123"/>
+
+    <TextView
+        android:id="@+id/proteina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="italic|bold"
+        android:textSize="12sp"
+        android:textColor="@color/gray_700"
+        tools:text="Prot: 130"/>
+
+    <TextView
+        android:id="@+id/gordura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="italic|bold"
+        android:textSize="12sp"
+        android:textColor="@color/gray_700"
+        tools:text="Gord: 123"/>
+
+    <TextView
+        android:id="@+id/fibra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="italic|bold"
+        android:textSize="12sp"
+        android:textColor="@color/gray_700"
+        tools:text="Fib: 123"/>
+    <TextView
+        android:id="@+id/Kcal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="italic|bold"
+        android:textSize="12sp"
+        android:textColor="@color/gray_700"
+        tools:text="Kcal: 99999"/>
+</LinearLayout>

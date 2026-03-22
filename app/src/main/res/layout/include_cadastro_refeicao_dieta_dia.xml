@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_add_alimento_plano_sem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Campo para o nome da Refeição (ex: Almoço) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_nova_refeicao_nome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome da Refeição (ex: Almoço)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nova_refeicao_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Divisor visual -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Alimentos da Refeição"
+                android:textStyle="bold" />
+
+            <!-- ================== NOVA SEÇÃO DE ALIMENTOS (VERSÃO CORRIGIDA) ================== -->
+
+            <!-- RecyclerView para a lista de alimentos que serão adicionados -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_alimentos_para_adicionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="50dp"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_alimento_dieta_dia" />
+
+            <!-- Título para a seção de adição -->
+            <TextView
+                android:id="@+id/label_adicionar_alimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Adicionar novo alimento" />
+
+            <!-- Container Constraint para organizar os campos de input -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <!-- Campo para NOME do Alimento -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_novo_alimento_nome"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="Alimento"
+                    app:layout_constraintEnd_toStartOf="@+id/layout_novo_grama_alimento"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_novo_alimento_nome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo para GRAMAS -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_novo_grama_alimento"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Gramas"
+                    app:layout_constraintBottom_toBottomOf="@id/layout_novo_alimento_nome"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/layout_novo_alimento_nome">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/add_novo_grama_alimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Layout para os 4 campos de macros, usando pesos para distribuição igual -->
+                <LinearLayout
+                    android:id="@+id/macros_input_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_add_alimento_a_refeicao"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_novo_alimento_nome">
+
+                    <!-- Carboidratos -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_novo_carb_alimento"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Carb.">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_novo_carb_alimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Proteínas -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_novo_prot_alimento"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:hint="Prot.">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_novo_prot_alimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Gorduras -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_novo_gord_alimento"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:hint="Gord.">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_novo_gord_alimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Fibras -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layout_novo_fib_alimento"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:hint="Fib.">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_novo_fib_alimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <!-- Botão para adicionar o alimento à lista de cima -->
+                <!-- Botão para adicionar o alimento à lista de cima -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_alimento_a_refeicao"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:contentDescription="Adicionar alimento à refeição"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    app:icon="@drawable/outline_add_box_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/macros_input_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/macros_input_layout" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Botão principal para adicionar a REFEIÇÃO completa (com seus alimentos) ao dia -->
+            <Button
+                android:id="@+id/btn_add_refeicao_ao_dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:text="Adicionar Refeição ao Dia"
+                app:icon="@drawable/baseline_add_white_24" />
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,268 @@
+kotlin version: 2.0.21
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: C:/Users/Carlos Eduardo/AndroidStudioProjects/FitCorePro/app/src/main/java/com/app/fitcorepro/feature/plano_semanal/view/CadastroPlanoSemanalFragment.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:27)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:14)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:246)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:142)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:148)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:103)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:49)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:464)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:73)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:301)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:129)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:675)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1660)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN LOCAL_FUNCTION_FOR_LAMBDA name:onViewCreated$lambda$7 visibility:private modality:FINAL <> (this$0:com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment, $layoutNomePlano:@[FlexibleNullability] com.google.android.material.textfield.TextInputLayout?, it:@[FlexibleNullability] android.view.View?) returnType:kotlin.Unit
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER name:this$0 index:0 type:com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$layoutNomePlano index:1 type:@[FlexibleNullability] com.google.android.material.textfield.TextInputLayout?
+  VALUE_PARAMETER name:it index:2 type:@[FlexibleNullability] android.view.View?
+  BLOCK_BODY
+    VAR name:nomeDoPlano type:kotlin.String [val]
+      CALL 'public open fun toString (): kotlin.String declared in kotlin.Any' type=kotlin.String origin=null
+        $this: CALL 'public open fun getText (): @[FlexibleNullability] android.text.Editable? declared in android.widget.EditText' type=@[FlexibleNullability] android.text.Editable? origin=GET_PROPERTY
+          $this: BLOCK type=android.widget.EditText origin=FOLDED_ELVIS
+            WHEN type=android.widget.EditText origin=FOLDED_ELVIS
+              BRANCH
+                if: COMPOSITE type=kotlin.Boolean origin=null
+                  VAR IR_TEMPORARY_VARIABLE name:tmp0 type:android.widget.EditText? [val]
+                    GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:txtNomePlanoSemanal type:android.widget.EditText? visibility:private' type=android.widget.EditText? origin=null
+                      receiver: GET_VAR 'this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment origin=null
+                  CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                    $this: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                      arg0: GET_VAR 'val tmp0: android.widget.EditText? [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=android.widget.EditText? origin=null
+                      arg1: CONST Null type=kotlin.Nothing? value=null
+                then: GET_VAR 'val tmp0: android.widget.EditText? [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=android.widget.EditText? origin=null
+              BRANCH
+                if: CONST Boolean type=kotlin.Boolean value=true
+                then: BLOCK type=kotlin.Unit origin=null
+                  CALL 'public final fun throwUninitializedPropertyAccessException (propertyName: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                    propertyName: CONST String type=kotlin.String value="txtNomePlanoSemanal"
+    WHEN type=kotlin.Unit origin=IF
+      BRANCH
+        if: CALL 'public final fun isBlank (): kotlin.Boolean declared in kotlin.text.StringsKt' type=kotlin.Boolean origin=null
+          $receiver: GET_VAR 'val nomeDoPlano: kotlin.String [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=kotlin.String origin=null
+        then: BLOCK type=kotlin.Unit origin=null
+          CALL 'public open fun setError (p0: @[EnhancedNullability] kotlin.CharSequence?): kotlin.Unit declared in com.google.android.material.textfield.TextInputLayout' type=kotlin.Unit origin=EQ
+            $this: GET_VAR '$layoutNomePlano: @[FlexibleNullability] com.google.android.material.textfield.TextInputLayout? declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=@[FlexibleNullability] com.google.android.material.textfield.TextInputLayout? origin=null
+            p0: CONST String type=kotlin.String value="Obrigatório"
+          RETURN type=kotlin.Nothing from='private final fun onViewCreated$lambda$7 (this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment, $layoutNomePlano: @[FlexibleNullability] com.google.android.material.textfield.TextInputLayout?, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment'
+            GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:kotlin.Unit visibility:public [final,static] declared in kotlin.Unit' type=kotlin.Unit origin=null
+    CALL 'public open fun setError (p0: @[EnhancedNullability] kotlin.CharSequence?): kotlin.Unit declared in com.google.android.material.textfield.TextInputLayout' type=kotlin.Unit origin=EQ
+      $this: GET_VAR '$layoutNomePlano: @[FlexibleNullability] com.google.android.material.textfield.TextInputLayout? declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=@[FlexibleNullability] com.google.android.material.textfield.TextInputLayout? origin=null
+      p0: CONST Null type=kotlin.Nothing? value=null
+    WHEN type=kotlin.Unit origin=IF
+      BRANCH
+        if: CALL 'public abstract fun isEmpty (): kotlin.Boolean [fake_override] declared in kotlin.collections.MutableMap' type=kotlin.Boolean origin=null
+          $this: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:refeicoesSemana type:kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> visibility:private' type=kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> origin=null
+            receiver: GET_VAR 'this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment origin=null
+        then: BLOCK type=kotlin.Unit origin=null
+          CALL 'public open fun show (): kotlin.Unit declared in android.widget.Toast' type=kotlin.Unit origin=null
+            $this: CALL 'public open fun makeText (p0: @[FlexibleNullability] android.content.Context?, p1: @[FlexibleNullability] kotlin.CharSequence?, p2: kotlin.Int): @[FlexibleNullability] android.widget.Toast? declared in android.widget.Toast' type=@[FlexibleNullability] android.widget.Toast? origin=null
+              p0: CALL 'public final fun requireContext (): @[EnhancedNullability] android.content.Context [fake_override] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment' type=@[EnhancedNullability] android.content.Context origin=null
+                $this: GET_VAR 'this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment origin=null
+              p1: CONST String type=kotlin.String value="Adicione pelo menos um dia com uma refeição"
+              p2: CONST Int type=kotlin.Int value=0
+          RETURN type=kotlin.Nothing from='private final fun onViewCreated$lambda$7 (this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment, $layoutNomePlano: @[FlexibleNullability] com.google.android.material.textfield.TextInputLayout?, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment'
+            GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:kotlin.Unit visibility:public [final,static] declared in kotlin.Unit' type=kotlin.Unit origin=null
+    COMPOSITE type=kotlin.Unit origin=null
+      VAR name:planoSemanalDiaList type:kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> [val]
+        CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.jvm.internal.Ref.ObjectRef' type=kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> origin=null
+          <class: T>: kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>
+      SET_FIELD 'FIELD IR_BUILTINS_STUB name:element type:T of kotlin.jvm.internal.Ref.ObjectRef visibility:public declared in kotlin.jvm.internal.Ref.ObjectRef' type=kotlin.Unit origin=null
+        receiver: GET_VAR 'val planoSemanalDiaList: kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> origin=null
+        value: CALL 'public final fun mutableListOf <T> (): kotlin.collections.MutableList<T of kotlin.collections.CollectionsKt.mutableListOf> [inline] declared in kotlin.collections.CollectionsKt' type=kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia> origin=null
+          <T>: com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia
+    COMPOSITE type=kotlin.Unit origin=null
+      CALL 'public final fun map <K, V, R> (transform: kotlin.Function1<kotlin.collections.Map.Entry<K of kotlin.collections.MapsKt.map, V of kotlin.collections.MapsKt.map>, R of kotlin.collections.MapsKt.map>): kotlin.collections.List<R of kotlin.collections.MapsKt.map> [inline] declared in kotlin.collections.MapsKt' type=kotlin.collections.List<kotlin.Unit> origin=null
+        <K>: kotlin.String
+        <V>: kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>
+        <R>: kotlin.Unit
+        $receiver: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:refeicoesSemana type:kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> visibility:private' type=kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> origin=null
+          receiver: GET_VAR 'this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment origin=null
+        transform: BLOCK type=kotlin.Function1<kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>>, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onViewCreated$lambda$7$lambda$6 ($planoSemanalDiaList: kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>>, <destruct>: kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>>): kotlin.Unit declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment' type=kotlin.Function1<kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>>, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+            $planoSemanalDiaList: GET_VAR 'val planoSemanalDiaList: kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> origin=null
+      COMPOSITE type=kotlin.Unit origin=null
+    VAR name:planoSemanal type:com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanal [val]
+      CONSTRUCTOR_CALL 'public constructor <init> (id: kotlin.String, nome: kotlin.String, ativo: kotlin.Boolean, idUsuario: kotlin.String, createdDate: java.util.Date, planoSemanalDias: kotlin.collections.List<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>) [primary] declared in com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanal' type=com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanal origin=null
+        id: CONST String type=kotlin.String value=""
+        nome: GET_VAR 'val nomeDoPlano: kotlin.String [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=kotlin.String origin=null
+        ativo: CONST Boolean type=kotlin.Boolean value=true
+        idUsuario: CONST String type=kotlin.String value=""
+        createdDate: CONSTRUCTOR_CALL 'public constructor <init> () declared in java.util.Date' type=java.util.Date origin=null
+        planoSemanalDias: GET_FIELD 'FIELD IR_BUILTINS_STUB name:element type:T of kotlin.jvm.internal.Ref.ObjectRef visibility:public declared in kotlin.jvm.internal.Ref.ObjectRef' type=kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia> origin=null
+          receiver: GET_VAR 'val planoSemanalDiaList: kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> origin=null
+    CALL 'public open fun navigate (resId: kotlin.Int): kotlin.Unit declared in androidx.navigation.NavController' type=kotlin.Unit origin=null
+      $this: CALL 'public final fun findNavController (): androidx.navigation.NavController declared in androidx.navigation.fragment.FragmentKt' type=androidx.navigation.NavController origin=null
+        $receiver: GET_VAR 'this$0: com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7' type=com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment origin=null
+      resId: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:action_nav_new_plan_week_to_nav_diet_week type:kotlin.Int visibility:public [static] declared in com.app.fitcorepro.R.id' type=kotlin.Int superQualifierSymbol=com.app.fitcorepro.R.id origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:40)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:406)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:423)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:168)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:39)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseFactoriesKt.createFilePhase$lambda$4(PhaseFactories.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:69)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 43 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:onViewCreated$lambda$7$lambda$6 visibility:private modality:FINAL <> ($planoSemanalDiaList:kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>>, <destruct>:kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>>) returnType:kotlin.Unit
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$planoSemanalDiaList index:0 type:kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>>
+  VALUE_PARAMETER DESTRUCTURED_OBJECT_PARAMETER name:<destruct> index:1 type:kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>>
+  BLOCK_BODY
+    VAR name:$i$a$-map-CadastroPlanoSemanalFragment$onViewCreated$4$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    VAR name:dia type:kotlin.String [val]
+      CALL 'public final fun component1 <K, V> (): K of kotlin.collections.MapsKt.component1 [inline,operator] declared in kotlin.collections.MapsKt' type=kotlin.String origin=COMPONENT_N(index=1)
+        <K>: kotlin.String
+        <V>: kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>
+        $receiver: GET_VAR '<destruct>: kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> origin=null
+    VAR name:refeicoes type:kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal> [val]
+      CALL 'public final fun component2 <K, V> (): V of kotlin.collections.MapsKt.component2 [inline,operator] declared in kotlin.collections.MapsKt' type=kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal> origin=COMPONENT_N(index=2)
+        <K>: kotlin.String
+        <V>: kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>
+        $receiver: GET_VAR '<destruct>: kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=kotlin.collections.Map.Entry<kotlin.String, kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>> origin=null
+    BLOCK type=kotlin.Unit origin=null
+      VAR name:diaSemanaEnum type:com.app.fitcorepro.enuns.DiaSemana? [val]
+        CALL 'public final fun fromDescricao (descricao: kotlin.String): com.app.fitcorepro.enuns.DiaSemana? declared in com.app.fitcorepro.enuns.DiaSemana.Companion' type=com.app.fitcorepro.enuns.DiaSemana? origin=null
+          $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.app.fitcorepro.enuns.DiaSemana.Companion visibility:public [final,static] declared in com.app.fitcorepro.enuns.DiaSemana' type=com.app.fitcorepro.enuns.DiaSemana.Companion origin=null
+          descricao: GET_VAR 'val dia: kotlin.String [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=kotlin.String origin=null
+      WHEN type=kotlin.Unit origin=IF
+        BRANCH
+          if: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
+            arg0: GET_VAR 'val diaSemanaEnum: com.app.fitcorepro.enuns.DiaSemana? [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=com.app.fitcorepro.enuns.DiaSemana? origin=null
+            arg1: CONST Null type=kotlin.Nothing? value=null
+          then: COMPOSITE type=kotlin.Unit origin=null
+            BLOCK type=kotlin.Boolean origin=null
+              VAR name:planoSemanalDia type:com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia [val]
+                CONSTRUCTOR_CALL 'public constructor <init> (id: kotlin.String, planoSemanaId: kotlin.String, diaSemana: kotlin.Int, createdDate: java.util.Date, refeicoes: kotlin.collections.List<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal>) [primary] declared in com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia' type=com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia origin=null
+                  id: CONST String type=kotlin.String value=""
+                  planoSemanaId: CONST String type=kotlin.String value=""
+                  diaSemana: CALL 'public final fun <get-codigo> (): kotlin.Int [fake_override] declared in kotlin.Nothing' type=kotlin.Int origin=GET_PROPERTY
+                    $this: BLOCK type=kotlin.Nothing origin=null
+                      CALL 'public final fun CHECK_NOT_NULL <T0> (arg0: T0 of kotlin.internal.ir.CHECK_NOT_NULL?): {T0 of kotlin.internal.ir.CHECK_NOT_NULL & Any} declared in kotlin.internal.ir' type=kotlin.Nothing origin=EXCLEXCL
+                        <T0>: kotlin.Nothing
+                        arg0: GET_VAR 'val diaSemanaEnum: com.app.fitcorepro.enuns.DiaSemana? [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=com.app.fitcorepro.enuns.DiaSemana? origin=null
+                      CALL 'public final fun throwKotlinNothingValueException (): kotlin.Nothing declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Nothing origin=null
+                  createdDate: CONSTRUCTOR_CALL 'public constructor <init> () declared in java.util.Date' type=java.util.Date origin=null
+                  refeicoes: GET_VAR 'val refeicoes: kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal> [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.RefeicaoPlanoSemanal> origin=null
+              CALL 'public abstract fun add (element: E of kotlin.collections.MutableList): kotlin.Boolean declared in kotlin.collections.MutableList' type=kotlin.Boolean origin=null
+                $this: GET_FIELD 'FIELD IR_BUILTINS_STUB name:element type:T of kotlin.jvm.internal.Ref.ObjectRef visibility:public declared in kotlin.jvm.internal.Ref.ObjectRef' type=kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia> origin=null
+                  receiver: GET_VAR '$planoSemanalDiaList: kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=kotlin.jvm.internal.Ref.ObjectRef<kotlin.collections.MutableList<com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia>> origin=null
+                element: GET_VAR 'val planoSemanalDia: com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia [val] declared in com.app.fitcorepro.feature.plano_semanal.view.CadastroPlanoSemanalFragment.onViewCreated$lambda$7$lambda$6' type=com.app.fitcorepro.feature.plano_semanal.model.PlanoSemanalDia origin=null
+            COMPOSITE type=kotlin.Unit origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:100)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:616)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:644)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitComposite(IrElementVisitor.kt:125)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrComposite.accept(IrComposite.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 53 more
+Caused by: java.lang.IllegalStateException: Fake override should have at least one overridden descriptor: FUN FAKE_OVERRIDE name:<get-codigo> visibility:public modality:FINAL <> ($this:kotlin.Nothing) returnType:kotlin.Int [fake_override]
+	at org.jetbrains.kotlin.backend.jvm.ir.JvmIrUtilsKt.findSuperDeclaration(JvmIrUtils.kt:408)
+	at org.jetbrains.kotlin.backend.jvm.mapping.MethodSignatureMapper.findSuperDeclaration(MethodSignatureMapper.kt:443)
+	at org.jetbrains.kotlin.backend.jvm.mapping.MethodSignatureMapper.mapToCallableMethod(MethodSignatureMapper.kt:412)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:605)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.gen(ExpressionCodegen.kt:217)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generateConstructorArguments(ExpressionCodegen.kt:771)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitConstructorCall(ExpressionCodegen.kt:759)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitConstructorCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrConstructorCall.accept(IrConstructorCall.kt:27)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:790)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitComposite(IrElementVisitor.kt:125)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrComposite.accept(IrComposite.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:1101)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrWhen.accept(IrWhen.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 74 more
+
+

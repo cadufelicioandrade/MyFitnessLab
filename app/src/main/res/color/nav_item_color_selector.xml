@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- COR DO DESTAQUE: Altere para a cor que você quer no item selecionado -->
+    <item android:state_checked="true" android:color="@color/teal_500" />
+
+    <!-- COR PADRÃO: A cor cinza para os itens não selecionados (como você já queria) -->
+    <item android:color="@color/gray_900" />
+
+</selector>

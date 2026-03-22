@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_alimento_base"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_200"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- NOME DO ALIMENTO -->
+        <TextView
+            android:id="@+id/label_alimento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/label_gramas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Filé de Frango Grelhado" />
+
+        <!-- GRAMAS -->
+        <TextView
+            android:id="@+id/label_gramas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_700"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_alimento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/label_alimento"
+            tools:text="150g" />
+
+        <!-- DIVISOR -->
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/gray_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_alimento" />
+
+        <!-- INFO DOS MACROS -->
+        <!-- Usaremos uma 'chain' para distribuir igualmente -->
+        <TextView
+            android:id="@+id/label_Carb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/gray_700"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/label_Prot"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider"
+            tools:text="Carb: 28g" />
+
+        <TextView
+            android:id="@+id/label_Prot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_700"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_Carb"
+            app:layout_constraintEnd_toStartOf="@+id/label_gor"
+            app:layout_constraintStart_toEndOf="@+id/label_Carb"
+            app:layout_constraintTop_toTopOf="@id/label_Carb"
+            tools:text="Prot: 7g" />
+
+        <TextView
+            android:id="@+id/label_gor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_700"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_Carb"
+            app:layout_constraintEnd_toStartOf="@+id/label_fib"
+            app:layout_constraintStart_toEndOf="@+id/label_Prot"
+            app:layout_constraintTop_toTopOf="@id/label_Carb"
+            tools:text="Gord: 0g" />
+
+        <TextView
+            android:id="@+id/label_fib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_700"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/label_Carb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_gor"
+            app:layout_constraintTop_toTopOf="@id/label_Carb"
+            tools:text="Fib: 1g" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

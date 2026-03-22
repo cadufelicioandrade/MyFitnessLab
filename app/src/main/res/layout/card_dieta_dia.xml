@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/deep_teal"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Café da Manhã" />
+
+    <ImageButton
+        android:id="@+id/btn_toggle_visibility_refeicao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:tint="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        android:src="@drawable/outline_expand_circle_down_24"
+        app:layout_constraintTop_toTopOf="@+id/title_card"
+        app:layout_constraintBottom_toBottomOf="@+id/title_card"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/header_macros_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/title_card"
+        android:gravity="center"
+        android:weightSum="5"
+        android:padding="7dp">
+
+        <TextView
+            android:id="@+id/carboidrato_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="italic|bold"
+            android:textSize="16sp"
+            android:textColor="@color/gray_700"
+            tools:text="Carb: 123"/>
+
+        <TextView
+            android:id="@+id/proteina_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="italic|bold"
+            android:textSize="16sp"
+            android:textColor="@color/gray_700"
+            tools:text="Prot: 130"/>
+
+        <TextView
+            android:id="@+id/gordura_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="italic|bold"
+            android:textSize="16sp"
+            android:textColor="@color/gray_700"
+            tools:text="Gord: 123"/>
+
+        <TextView
+            android:id="@+id/fibra_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="italic|bold"
+            android:textSize="16sp"
+            android:textColor="@color/gray_700"
+            tools:text="Fib: 123"/>
+        <TextView
+            android:id="@+id/Kcal_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:textStyle="italic|bold"
+            android:textSize="16sp"
+            android:textColor="@color/gray_700"
+            tools:text="Kcal: 99999"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_divider_card"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_macros_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_dieta_dia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_divider_card"
+        android:clipToPadding="false"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_alimento_plano_semanal" />
+
+    <ImageButton
+        android:id="@+id/btn_remove_refeicao"
+        android:src="@drawable/baseline_delete_24"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="fitCenter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:tint="@color/gray_700"
+        android:contentDescription="@null"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_alimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/outline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundTint="@color/deep_teal"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@null"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

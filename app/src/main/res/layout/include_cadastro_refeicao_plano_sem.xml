@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_add_alimento_plano_sem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Campo para o nome da Refeição (ex: Almoço) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_nova_refeicao_nome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome da Refeição (ex: Almoço)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_nova_refeicao_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Divisor visual -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Alimentos da Refeição"
+                android:textStyle="bold" />
+
+            <!-- ================== NOVA SEÇÃO DE ALIMENTOS ================== -->
+
+            <!-- RecyclerView para a lista de alimentos que serão adicionados -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_alimentos_para_adicionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_alimento_cadastro_plano_sem" />
+
+            <!-- Layout horizontal para os campos de adição de UM novo alimento -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Campo para NOME do Alimento -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_novo_alimento_nome"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Alimento">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_novo_alimento_nome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo para GRAMAS -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_novo_grama_alimento"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:inputType="number"
+                    android:hint="Gramas">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/add_novo_grama_alimento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Botão para adicionar o alimento à lista de cima -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_alimento_a_refeicao"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/outline_add_box_24" />
+
+            </LinearLayout>
+            <!-- ============================================================== -->
+
+            <!-- Botão principal para adicionar a REFEIÇÃO completa (com seus alimentos) ao dia -->
+            <Button
+                android:id="@+id/btn_add_refeicao_ao_dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:text="Adicionar Refeição ao Dia"
+                app:icon="@drawable/baseline_add_white_24" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

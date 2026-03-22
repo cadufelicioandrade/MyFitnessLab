@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ImageButton
+        android:id="@+id/btn_dieta_semana"
+        android:src="@drawable/dieta"
+        android:background="@drawable/rounded_button_background"
+        android:layout_margin="7dp"
+        android:layout_width="160dp"
+        android:layout_height="170dp"/>
+
+    <ImageButton
+        android:id="@+id/btn_dieta_dia"
+        android:src="@drawable/dieta_balanceada"
+        android:background="@drawable/rounded_button_background"
+        android:layout_marginStart="7dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"/>
+
+</LinearLayout>
